@@ -24,9 +24,7 @@ function calculateTotalPrice(arr, productName) {
     let totalPrice = 0;
 
     for (let obj of arr) {
-
         const valuesMassive = Object.values(obj); // ПЕРЕДАЛ ЗНАЧЕНИЕ В ПЕРЕМЕННУЮ
-        console.log(Object.values(obj));
 
         if (valuesMassive.includes(productName)) {
             totalPrice = obj['price'] * obj['quantity'];
