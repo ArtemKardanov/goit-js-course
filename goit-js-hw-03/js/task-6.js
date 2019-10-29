@@ -24,10 +24,14 @@ function calculateTotalPrice(arr, productName) {
     let totalPrice = 0;
 
     for (let obj of arr) {
-        Object.values(obj);
 
-        if (Object.values(obj).includes(productName)) {
+        const valuesMassive = Object.values(obj); // ПЕРЕДАЛ ЗНАЧЕНИЕ В ПЕРЕМЕННУЮ
+        console.log(Object.values(obj));
+
+        if (valuesMassive.includes(productName)) {
             totalPrice = obj['price'] * obj['quantity'];
+
+            break // ДОБАВИЛ 'BREAK'
         }
     }
 

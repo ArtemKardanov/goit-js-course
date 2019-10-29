@@ -25,7 +25,8 @@ function getAllPropValues(arr, prop) {
     let propValueMassive = [];
 
     for (let object of arr) {
-        if (object[prop] !== undefined)
+
+        if (prop in object) // ИЗМЕНИЛ УСЛОВИЕ
             propValueMassive.push(object[prop]);
     }
 
