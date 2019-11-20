@@ -70,5 +70,18 @@ console.log(getUsersWithFriend(users, 'Briana Decker'));
 console.log(getUsersWithFriend(users, 'Goldie Gentry'));
 
 ///////Задание 9
+const getNamesSortedByFriendsCount = users => {
+    return users.sort((userA, userB) => userA['friends'].length > userB['friends'].length ? 1 : -1).map(user => user.name)
+};
+
+console.log(getNamesSortedByFriendsCount(users));
+
 
 ///////Задание 10
+const getSortedUniqueSkills = users => {
+    return users.map(user => user.skills).join(',').split(',').sort().filter((skill, index, arrayOfSkills) => {
+        return arrayOfSkills.indexOf(skill) === index
+    })
+};
+
+console.log(getSortedUniqueSkills(users));
