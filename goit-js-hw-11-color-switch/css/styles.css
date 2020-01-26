@@ -1,0 +1,39 @@
+.button {
+    background: #fff;
+    width: 225px;
+    display: block;
+    height: 33px;
+    /* padding-top: 19px; */
+    border: 1px solid #000;
+    font-family: 'Dosis', sans;
+    font-size: 18px;
+    font-weight: 200;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    opacity: .8;
+    letter-spacing: 1px;
+    -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    /* linear */
+}
+
+.button:first-child {
+    margin-bottom: 5px;
+}
+
+.button:hover {
+    cursor: pointer;
+    width: 225px;
+    height: 53px;
+    border: 1px solid teal;
+    opacity: 1;
+    letter-spacing: 4px;
+    -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
