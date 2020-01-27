@@ -10,6 +10,8 @@ const randomIntegerFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+let intervalColorChanger
+
 const colorChanger = {
     isActive: true,
 
@@ -18,10 +20,8 @@ const colorChanger = {
             return
         };
 
-        console.log('tt');
-
         this.isActive = true;
-        this.intervalColorChanger = setInterval(() => {
+        intervalColorChanger = setInterval(() => {
             body.setAttribute(
                 'style',
                 'background-color:' + `${colors[randomIntegerFromInterval(0, 5)]}`,
@@ -30,13 +30,10 @@ const colorChanger = {
     },
 
     stop() {
-        console.log('yo');
-
-        clearInterval(this.intervalColorChanger);
+        clearInterval(intervalColorChanger);
         this.isActive = false;
     }
 };
 
 startButton.addEventListener('click', colorChanger.start);
-
 stopButton.addEventListener('click', colorChanger.stop);

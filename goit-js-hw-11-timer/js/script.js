@@ -3,21 +3,23 @@ class CountdownTimer {
         selector,
         targetDate
     }) {
+        this.selector = selector;
         this.targetDate = targetDate;
 
         this.refs = {
-            daysValue: document.querySelector('span[data-value="days"]'),
-            hoursValue: document.querySelector('span[data-value="hours"]'),
-            minsValue: document.querySelector('span[data-value="mins"]'),
-            secsValue: document.querySelector('span[data-value="secs"]'),
+            daysValue: document.querySelector(`${this.selector} [data-value="days"]`),
+            hoursValue: document.querySelector(`${this.selector} [data-value="hours"]`),
+            minsValue: document.querySelector(`${this.selector} [data-value="mins"]`),
+            secsValue: document.querySelector(`${this.selector} [data-value="secs"]`),
         };
 
         this.timerId = setInterval(() => {
             const nowTime = Date.now();
-            this.remainTime = this.targetDate - nowTime
+            this.remainTime = this.targetDate - nowTime;
 
             this.updateClockFace(this.remainTime);
         }, 1000);
+
     };
 
     updateClockFace(time) {
@@ -34,6 +36,6 @@ class CountdownTimer {
 };
 
 new CountdownTimer({
-    selector: document.querySelector('#timer-1'),
+    selector: '#timer-1',
     targetDate: new Date('March 26, 2020, 20:20'),
 });
