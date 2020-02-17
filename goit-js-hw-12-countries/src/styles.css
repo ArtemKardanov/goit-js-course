@@ -1,3 +1,28 @@
+.country-name {
+  font-family: 'Lacquer', sans-serif;
+}
+
+.country-list {
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  cursor: pointer;
+}
+
+.country-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.country-info img:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 16px 18px 27px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 16px 18px 27px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 16px 18px 27px -5px rgba(0, 0, 0, 0.75);
+  transform: translateX(-7px);
+}
+
 /* SPINNER */
 
 .lds-roller {

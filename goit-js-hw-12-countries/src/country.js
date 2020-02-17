@@ -9,7 +9,6 @@ const debounce = require('lodash.debounce');
 
 const refs = {
   searchForm: document.querySelector('#search-form'),
-
   queriedCountry: document.querySelector('#queried-country'),
 };
 
@@ -29,14 +28,18 @@ function searcFormInputHandler(e) {
 
   countryUtil.fetchCountries().then(data => {
 
+    if (!data.length || data.length == 0) {
+      PNotify.alert('Oops, there is no countries found. Please enter a more specific query!');
+    };
+
     if (data.length == 1) {
       const markup = buildCountryArticleMarkup(data[0]);
-
       insertCountryItem(markup)
+
     } else if (data.length >= 2 && data.length <= 10) {
       const markupCountryList = buildCountryListMarkup(data);
-
       insertCountryItem(markupCountryList);
+
     } else if (data.length > 10) {
       PNotify.alert('Too many matches found. Please enter a more specific query!');
     };
