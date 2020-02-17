@@ -1,39 +1,38 @@
 // Задание 1
 
-// const delay = ms => {
-//   return new Promise((resolve, reject) => {
-//     resolve(ms);
-//   });
-// };
+const delay = ms => {
+  return new Promise((resolve, reject) => {
+    resolve(ms);
+  });
+};
 
-// const logger = time => console.log(`Resolved after ${time}ms`);
+const logger1 = time => console.log(`Resolved after ${time}ms`);
 
-// delay(2000).then(logger); // Resolved after 2000ms
-// delay(1000).then(logger); // Resolved after 1000ms
-// delay(1500).then(logger); // Resolved after 1500ms
+delay(2000).then(logger1);
+delay(1000).then(logger1);
+delay(1500).then(logger1);
 
 // Задание 2
 
-// const users = [
-//   { name: 'Mango', active: true },
-//   { name: 'Poly', active: false },
-//   { name: 'Ajax', active: true },
-//   { name: 'Lux', active: false },
-// ];
+const users = [
+  { name: 'Mango', active: true },
+  { name: 'Poly', active: false },
+  { name: 'Ajax', active: true },
+  { name: 'Lux', active: false },
+];
 
-// const toggleUserState = (allUsers, userName) => {
-//   return new Promise((resolve, reject) => {
-//     const updatedUsers = allUsers.map(user =>
-//       user.name === userName ? { ...user, active: !user.active } : user,
-//     );
-//     resolve(updatedUsers);
-//   });
-// };
+const toggleUserState = (allUsers, userName) => {
+  const updatedUsers = allUsers.map(user =>
+    user.name === userName ? { ...user, active: !user.active } : user,
+  );
 
-// const logger = updatedUsers => console.table(updatedUsers);
+  return Promise.resolve(updatedUsers);
+};
 
-// toggleUserState(users, 'Mango').then(logger);
-// toggleUserState(users, 'Lux').then(logger);
+const logger = updatedUsers => console.table(updatedUsers);
+
+toggleUserState(users, 'Mango').then(logger);
+toggleUserState(users, 'Lux').then(logger);
 
 // Задание 3
 
