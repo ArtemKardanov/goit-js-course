@@ -1,11 +1,11 @@
 const spinner = document.querySelector('#spinner');
 
 export default {
-  show() {
+  hide() {
     spinner.classList.remove('lds-roller');
   },
 
-  hide() {
+  show() {
     spinner.classList.add('lds-roller');
   },
 };

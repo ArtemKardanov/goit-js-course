@@ -24,11 +24,11 @@ function searcFormInputHandler(e) {
 
   countryUtil.searchQuery = inputValue;
 
-  spinner.hide();
+  spinner.show();
 
   countryUtil.fetchCountries().then(data => {
 
-    if (!data.length || data.length == 0) {
+    if (data.length == 0) {
       PNotify.alert('Oops, there is no countries found. Please enter a more specific query!');
     };
 
@@ -44,10 +44,8 @@ function searcFormInputHandler(e) {
       PNotify.alert('Too many matches found. Please enter a more specific query!');
     };
 
-    spinner.show()
+    spinner.hide()
   }).catch(error => console.warn(error));
-
-  input.value = '';
 };
 
 function insertCountryItem(item) {
